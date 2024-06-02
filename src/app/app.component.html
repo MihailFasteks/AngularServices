@@ -1,0 +1,45 @@
+<!-- task1 -->
+<!-- <div>
+  <input type="text" [(ngModel)]="filterText" (input)="applyFilter()" placeholder="Фильтр по названию товара">
+</div>
+<div>
+  <ul>
+    <li *ngFor="let product of filteredProducts">{{ product }}</li>
+  </ul>
+</div> -->
+
+<!-- task2 -->
+<!-- <button (click)="findMax()" value="Inc">Max</button>
+<button (click)="sortInc()" value="Inc">Inc</button>
+<button (click)="sortDes()" value="Des">Dec</button>
+<p *ngFor="let num of getNumbers()">{{num}}</p>
+<p> Max value: {{max}}</p> -->
+
+
+<!-- task3 -->
+
+<div>
+  <h1>Product List</h1>
+  <input 
+    type="text" 
+    placeholder="Filter products by name" 
+    [(ngModel)]="filter" 
+    (input)="onFilterChange()">
+  
+  <button (click)="sortAsc()">Sort Ascending</button>
+  <button (click)="sortDes()">Sort Descending</button>
+
+  <ul>
+    <li *ngFor="let product of filteredProducts">
+      {{ product.name }} - ${{ product.price }}<br>
+      {{ product.description }}
+    </li>
+  </ul>
+
+  <div *ngIf="filteredProducts.length === 0">No products found</div>
+
+  <div>
+    <h2>Product with Max Price</h2>
+    <p>{{ maxPriceProduct.name }} - ${{ maxPriceProduct.price }}</p>
+  </div>
+</div>
